@@ -1,10 +1,16 @@
+import { useTranslation } from "react-i18next";
 import "./App.css";
+import { LanguageSelector } from "./components/LanguageSelector";
+import "./i18n";
 
 function App() {
+  const { t } = useTranslation();
+
   return (
     <>
       <div>
-        <h1>Home App</h1>
+        <LanguageSelector />
+        <h1>{t("home_page")}</h1>
       </div>
     </>
   );
