@@ -1,192 +1,162 @@
 [
-    {
-        "name": "John Doe",
-        "age": 30,
-        "username": "johndoe",
-        "email": "john.doe@example.com",
-        "address": {
-            "street": "123 Main Street",
-            "city": "Cityville",
-            "zip": "12345"
-        },
-        "phone": "555-123-4567",
-        "website": "www.johndoe.com",
-        "occupation": "Software Engineer",
-        "hobbies": [
-            "Reading",
-            "Gaming"
-        ],
-        "id": "e21b6300ac79a14f355b"
+  {
+    "name": "John Doe",
+    "age": 30,
+    "username": "johndoe",
+    "email": "john.doe@example.com",
+    "address": {
+      "street": "123 Main Street",
+      "city": "Cityville",
+      "zip": "12345"
     },
-    {
-        "name": "Jane Smith",
-        "age": 25,
-        "username": "janesmith",
-        "email": "jane.smith@example.com",
-        "address": {
-            "street": "456 Park Avenue",
-            "city": "Townsville",
-            "zip": "54321"
-        },
-        "phone": "555-987-6543",
-        "website": "www.janesmith.com",
-        "occupation": "Graphic Designer",
-        "hobbies": [
-            "Painting",
-            "Traveling"
-        ],
-        "id": "6eab5dfd90ac9f1d75eb"
+    "phone": "555-123-4567",
+    "website": "www.johndoe.com",
+    "occupation": "Software Engineer",
+    "hobbies": ["Reading", "Gaming"],
+    "id": "e21b6300ac79a14f355b"
+  },
+  {
+    "name": "Jane Smith",
+    "age": 25,
+    "username": "janesmith",
+    "email": "jane.smith@example.com",
+    "address": {
+      "street": "456 Park Avenue",
+      "city": "Townsville",
+      "zip": "54321"
     },
-    {
-        "name": "Michael Johnson",
-        "age": 40,
-        "username": "michaeljohnson",
-        "email": "michael.johnson@example.com",
-        "address": {
-            "street": "789 Oak Lane",
-            "city": "Villageland",
-            "zip": "67890"
-        },
-        "phone": "555-456-7890",
-        "website": "www.michaeljohnson.com",
-        "occupation": "Teacher",
-        "hobbies": [
-            "Sports",
-            "Writing"
-        ],
-        "id": "f77c27e33cdf71e3539f"
+    "phone": "555-987-6543",
+    "website": "www.janesmith.com",
+    "occupation": "Graphic Designer",
+    "hobbies": ["Painting", "Traveling"],
+    "id": "6eab5dfd90ac9f1d75eb"
+  },
+  {
+    "name": "Michael Johnson",
+    "age": 40,
+    "username": "michaeljohnson",
+    "email": "michael.johnson@example.com",
+    "address": {
+      "street": "789 Oak Lane",
+      "city": "Villageland",
+      "zip": "67890"
     },
-    {
-        "name": "Emily Johnson",
-        "age": 28,
-        "username": "emilyjohnson",
-        "email": "emily.johnson@example.com",
-        "address": {
-            "street": "567 Elm Street",
-            "city": "Townsville",
-            "zip": "54321"
-        },
-        "phone": "555-789-0123",
-        "website": "www.emilyjohnson.com",
-        "occupation": "Marketing Manager",
-        "hobbies": [
-            "Photography",
-            "Gardening"
-        ],
-        "id": "6b695a7e5fee506d79ad"
+    "phone": "555-456-7890",
+    "website": "www.michaeljohnson.com",
+    "occupation": "Teacher",
+    "hobbies": ["Sports", "Writing"],
+    "id": "f77c27e33cdf71e3539f"
+  },
+  {
+    "name": "Emily Johnson",
+    "age": 28,
+    "username": "emilyjohnson",
+    "email": "emily.johnson@example.com",
+    "address": {
+      "street": "567 Elm Street",
+      "city": "Townsville",
+      "zip": "54321"
     },
-    {
-        "name": "Michael Brown",
-        "age": 35,
-        "username": "michaelbrown",
-        "email": "michael.brown@example.com",
-        "address": {
-            "street": "789 Maple Avenue",
-            "city": "Cityville",
-            "zip": "12345"
-        },
-        "phone": "555-234-5678",
-        "website": "www.michaelbrown.com",
-        "occupation": "Accountant",
-        "hobbies": [
-            "Cooking",
-            "Sports"
-        ],
-        "id": "a42f5564b0482863e0e7"
+    "phone": "555-789-0123",
+    "website": "www.emilyjohnson.com",
+    "occupation": "Marketing Manager",
+    "hobbies": ["Photography", "Gardening"],
+    "id": "6b695a7e5fee506d79ad"
+  },
+  {
+    "name": "Michael Brown",
+    "age": 35,
+    "username": "michaelbrown",
+    "email": "michael.brown@example.com",
+    "address": {
+      "street": "789 Maple Avenue",
+      "city": "Cityville",
+      "zip": "12345"
     },
-    {
-        "name": "Sophia Lee",
-        "age": 22,
-        "username": "sophialee",
-        "email": "sophia.lee@example.com",
-        "address": {
-            "street": "345 Oak Lane",
-            "city": "Villageland",
-            "zip": "67890"
-        },
-        "phone": "555-678-9012",
-        "website": "www.sophialee.com",
-        "occupation": "Student",
-        "hobbies": [
-            "Reading",
-            "Writing"
-        ],
-        "id": "e318d3008580fb09e0b0"
+    "phone": "555-234-5678",
+    "website": "www.michaelbrown.com",
+    "occupation": "Accountant",
+    "hobbies": ["Cooking", "Sports"],
+    "id": "a42f5564b0482863e0e7"
+  },
+  {
+    "name": "Sophia Lee",
+    "age": 22,
+    "username": "sophialee",
+    "email": "sophia.lee@example.com",
+    "address": {
+      "street": "345 Oak Lane",
+      "city": "Villageland",
+      "zip": "67890"
     },
-    {
-        "name": "John Smith",
-        "age": 28,
-        "username": "john.smith",
-        "email": "john.smith@example.com",
-        "address": {
-            "street": "123 Oak Avenue",
-            "city": "Cityville",
-            "zip": "12345"
-        },
-        "phone": "555-678-9012",
-        "website": "www.johnsmith.com",
-        "occupation": "Software Developer",
-        "hobbies": [
-            "Reading",
-            "Playing Soccer"
-        ],
-        "id": "8154c0d758081009903c"
+    "phone": "555-678-9012",
+    "website": "www.sophialee.com",
+    "occupation": "Student",
+    "hobbies": ["Reading", "Writing"],
+    "id": "e318d3008580fb09e0b0"
+  },
+  {
+    "name": "John Smith",
+    "age": 28,
+    "username": "john.smith",
+    "email": "john.smith@example.com",
+    "address": {
+      "street": "123 Oak Avenue",
+      "city": "Cityville",
+      "zip": "12345"
     },
-    {
-        "name": "Emma Johnson",
-        "age": 25,
-        "username": "emma.johnson",
-        "email": "emma.johnson@example.com",
-        "address": {
-            "street": "789 Elm Street",
-            "city": "Townsville",
-            "zip": "54321"
-        },
-        "phone": "555-890-1234",
-        "website": "www.emmajohnson.com",
-        "occupation": "Marketing Specialist",
-        "hobbies": [
-            "Photography",
-            "Yoga"
-        ],
-        "id": "e52ff260bdf7c4cafb70"
+    "phone": "555-678-9012",
+    "website": "www.johnsmith.com",
+    "occupation": "Software Developer",
+    "hobbies": ["Reading", "Playing Soccer"],
+    "id": "8154c0d758081009903c"
+  },
+  {
+    "name": "Emma Johnson",
+    "age": 25,
+    "username": "emma.johnson",
+    "email": "emma.johnson@example.com",
+    "address": {
+      "street": "789 Elm Street",
+      "city": "Townsville",
+      "zip": "54321"
     },
-    {
-        "name": "Sophia Adams",
-        "age": 35,
-        "username": "sophia.adams",
-        "email": "sophia.adams@example.com",
-        "address": {
-            "street": "567 Maple Street",
-            "city": "Villageland",
-            "zip": "67890"
-        },
-        "phone": "555-789-2345",
-        "website": "www.sophiaadams.com",
-        "occupation": "Teacher",
-        "hobbies": [
-            "Hiking",
-            "Cooking"
-        ],
-        "id": "58569a2393d1127ea103"
+    "phone": "555-890-1234",
+    "website": "www.emmajohnson.com",
+    "occupation": "Marketing Specialist",
+    "hobbies": ["Photography", "Yoga"],
+    "id": "e52ff260bdf7c4cafb70"
+  },
+  {
+    "name": "Sophia Adams",
+    "age": 35,
+    "username": "sophia.adams",
+    "email": "sophia.adams@example.com",
+    "address": {
+      "street": "567 Maple Street",
+      "city": "Villageland",
+      "zip": "67890"
     },
-    {
-        "name": "Emma Wilson",
-        "age": 27,
-        "username": "emmawilson",
-        "email": "emma.wilson@example.com",
-        "address": {
-            "street": "123 Oak Street",
-            "city": "Townsville",
-            "zip": "54321"
-        },
-        "phone": "555-234-5678",
-        "website": "www.emmawilson.com",
-        "occupation": "Teacher",
-        "hobbies": [
-            "Cooking",
-            "Writing"
-        ],
-        "id": "63c5c5e765f17e757fe4"
-    }
+    "phone": "555-789-2345",
+    "website": "www.sophiaadams.com",
+    "occupation": "Teacher",
+    "hobbies": ["Hiking", "Cooking"],
+    "id": "58569a2393d1127ea103"
+  },
+  {
+    "name": "Emma Wilson",
+    "age": 27,
+    "username": "emmawilson",
+    "email": "emma.wilson@example.com",
+    "address": {
+      "street": "123 Oak Street",
+      "city": "Townsville",
+      "zip": "54321"
+    },
+    "phone": "555-234-5678",
+    "website": "www.emmawilson.com",
+    "occupation": "Teacher",
+    "hobbies": ["Cooking", "Writing"],
+    "id": "63c5c5e765f17e757fe4"
+  }
 ]

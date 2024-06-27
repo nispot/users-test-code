@@ -1,13 +1,13 @@
-import App from "./App";
-import { Users } from "./pages/Users";
+import App from './App';
+import { Users } from './pages/Users';
 
 export default [
   {
-    path: "/",
+    path: '/',
     element: <App />,
   },
   {
-    path: "/users",
+    path: '/users',
     element: <Users />,
   },
 ];
