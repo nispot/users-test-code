@@ -10,6 +10,9 @@ export interface User {
   website: string;
   occupation: string;
   hobbies: string[];
+}
+
+export interface UserWithId extends User {
   id: string;
 }
 

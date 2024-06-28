@@ -1,5 +1,5 @@
 import App from './App';
-import { Users } from './pages/Users';
+import { Users } from './pages/users/Users';
 
 export default [
   {

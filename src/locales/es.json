@@ -1,4 +1,8 @@
 {
   "home_page": "Página de inicio",
-  "users_page": "Lista de Usuarios"
+  "users_page": "Lista de Usuarios",
+  "user_name": "Nombre de Usuario",
+  "phone": "Teléfono",
+  "website": "Sitio Web",
+  "occupation": "Ocupación"
 }
