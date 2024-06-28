@@ -9,7 +9,7 @@ export const LanguageSelector = () => {
 
   return (
     <div>
-      <button onClick={() => changeLanguage('en')}>English</button>
+      <button onClick={() => changeLanguage('en')}>English</button> |{' '}
       <button onClick={() => changeLanguage('es')}>Español</button>
     </div>
   );
