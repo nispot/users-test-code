@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/store';
 import { fetchUser } from '../../stores/users/slice';
 import { UserAvatar } from './components/UserAvatar';
 import { UserProfileCardSkeleton } from './components/UserProfileCardSkeleton';
+
 export const ViewUser = () => {
   const { id } = useParams();
   const { currentUser, loading, error } = useAppSelector(
@@ -12,13 +13,22 @@ export const ViewUser = () => {
   );
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (id) {
-      // fetch user by id
       dispatch(fetchUser(id));
     }
   }, [id, dispatch]);
+
+  const handleGoBack = () => {
+    navigate('/users');
+  };
+
+  const handleGoToEditUser = (id: string) => {
+    navigate(`/edit-user/${id}`);
+  };
+
   return (
     <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 pt-10">
       {loading ? (
@@ -30,7 +40,7 @@ export const ViewUser = () => {
       ) : (
         <div className="flex flex-col items-center pb-10 ">
           <div className="mb-3">
-            <UserAvatar id={currentUser?.id || ''} width={22} />
+            <UserAvatar id={currentUser?.id || ''} width={100} />
           </div>
           <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
             {currentUser?.name}
@@ -92,14 +102,22 @@ export const ViewUser = () => {
               </span>
             </div>
           </section>
-          <div className="flex mt-4 md:mt-6">
-            <a
-              href="#"
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          <section className="flex items-left gap-2 mt-8 mt-10 ">
+            <button
+              onClick={() => handleGoToEditUser(`${currentUser?.id}`)}
+              type="button"
+              className="px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               {t('edit_user')}
-            </a>
-          </div>
+            </button>
+            <button
+              type="button"
+              className="px-3 py-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+              onClick={handleGoBack}
+            >
+              {t('go_back_list')}
+            </button>
+          </section>
         </div>
       )}
     </div>

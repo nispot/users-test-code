@@ -1,3 +1,3 @@
-body {
-  @apply container mx-auto;
+html {
+  @apply antialiased dark:text-white dark:bg-black;
 }

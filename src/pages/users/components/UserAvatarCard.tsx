@@ -13,7 +13,7 @@ export const UserAvatarCard = ({
     <>
       <UserAvatar id={id} />
       <div className="text-sm">
-        <div className="font-medium text-gray-700">{`${name}`}</div>
+        <div className="font-medium text-gray-700 dark:text-gray-200">{`${name}`}</div>
         <div className="text-gray-400">{email}</div>
       </div>
     </>

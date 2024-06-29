@@ -1,6 +1,6 @@
 export const UserAvatar = ({
   id,
-  width = 10,
+  width = 42,
 }: {
   id: string;
   width?: number;
@@ -21,9 +21,11 @@ export const UserAvatar = ({
   return (
     <div className={`relative h-${width} w-${width}`}>
       <img
-        className="h-full w-full rounded-full object-cover object-center shadow-lg"
+        className={`h-${width} w-${width} rounded-full object-cover object-center shadow-lg`}
         src={urlPhoto}
         alt=""
+        width={width}
+        height={width}
       />
       {/*  <span className="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span> */}
     </div>

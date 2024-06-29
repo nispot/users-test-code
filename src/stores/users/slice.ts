@@ -5,13 +5,20 @@ import {
   PayloadAction,
 } from '@reduxjs/toolkit';
 
-import { deleteUser, getUser, getUsers } from '../../services/usersServices';
-import { UserWithId } from '../../types/types';
+import {
+  createUser,
+  deleteUser,
+  getUser,
+  getUsers,
+  updateUser,
+} from '../../services/usersServices';
+import { User, UserWithId } from '../../types/types';
 
 interface UsersState {
   users: UserWithId[];
   currentUser: UserWithId | null;
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  saveStatus: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
   loading: boolean;
   page: number;
@@ -21,6 +28,7 @@ const initialState: UsersState = {
   users: [],
   currentUser: null,
   status: 'idle',
+  saveStatus: 'idle',
   error: null,
   loading: false,
   page: 1,
@@ -65,6 +73,31 @@ export const removeUser: AsyncThunk<UserWithId, string, object> =
     },
   );
 
+export const editUser: AsyncThunk<UserWithId, UserWithId, object> =
+  createAsyncThunk<UserWithId, UserWithId>(
+    'users/editUser',
+    async (user, { rejectWithValue }) => {
+      try {
+        const response = await updateUser(user);
+        return response;
+      } catch (error) {
+        return rejectWithValue(error);
+      }
+    },
+  );
+
+export const addUser: AsyncThunk<UserWithId, User, object> = createAsyncThunk<
+  UserWithId,
+  User
+>('users/editUser', async (user, { rejectWithValue }) => {
+  try {
+    const response = await createUser(user);
+    return response;
+  } catch (error) {
+    return rejectWithValue(error);
+  }
+});
+
 const usersSlice = createSlice({
   name: 'users',
   initialState,
@@ -78,6 +111,12 @@ const usersSlice = createSlice({
     setError: (state, action: PayloadAction<string | null>) => {
       state.error = action.payload;
       state.status = 'idle';
+    },
+    setSaveStatus: (
+      state,
+      action: PayloadAction<'idle' | 'loading' | 'succeeded' | 'failed'>,
+    ) => {
+      state.saveStatus = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -101,12 +140,19 @@ const usersSlice = createSlice({
       .addCase(
         removeUser.fulfilled,
         (state, action: PayloadAction<UserWithId>) => {
-          console.log(action);
           state.users = state.users.filter(
             (user) => user.id !== action.payload.id,
           );
           state.loading = false;
           state.status = 'succeeded';
+        },
+      )
+      .addCase(
+        editUser.fulfilled,
+        (state, action: PayloadAction<UserWithId>) => {
+          state.currentUser = action.payload;
+          state.loading = false;
+          state.saveStatus = 'succeeded';
         },
       )
       .addMatcher(
@@ -127,6 +173,7 @@ const usersSlice = createSlice({
   },
 });
 
-export const { setLoading, setPage, setError } = usersSlice.actions;
+export const { setLoading, setPage, setError, setSaveStatus } =
+  usersSlice.actions;
 
 export default usersSlice.reducer;
