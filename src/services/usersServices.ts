@@ -15,3 +15,14 @@ export const getUser = async (id: string) => {
   }
   return response.json();
 };
+
+export const deleteUser = async (id: string) => {
+  const response = await fetch(`${BASE_URL}${id}`, {
+    method: 'DELETE',
+  });
+  if (!response.ok) {
+    throw new Error('Failed to delete user');
+  }
+  const res = response.json();
+  return { ...res, id };
+};

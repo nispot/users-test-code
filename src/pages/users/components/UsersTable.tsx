@@ -1,17 +1,33 @@
 import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/solid';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAppSelector } from '../../../hooks/store';
+import { toast } from 'sonner';
+import { useAppDispatch, useAppSelector } from '../../../hooks/store';
+import { removeUser, setError } from '../../../stores/users/slice';
 import { UserAvatarCard } from './UserAvatarCard';
 import UserTableSkeleton from './UserTableSkeleton';
 
 export const UsersTable = () => {
   const { users, loading, error } = useAppSelector((state) => state.users);
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+
+  const handleRemoveuser = (id: string) => {
+    dispatch(removeUser(id));
+  };
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+    dispatch(setError(null));
+  }, [error, dispatch]);
+
   return (
     <>
       {loading ? (
         <UserTableSkeleton />
-      ) : error ? (
+      ) : error === 'Failed to fetch users' ? (
         <div className="text-center text-red-500">{error}</div>
       ) : (
         <table className="w-full border-collapse bg-white text-left text-sm text-gray-500">
@@ -46,9 +62,13 @@ export const UsersTable = () => {
                 <td>{user.occupation}</td>
                 <td className="px-6 py-4">
                   <div className="flex justify-end gap-4">
-                    <a x-data="{ tooltip: 'Delete' }" href="#">
+                    <button
+                      onClick={() => {
+                        handleRemoveuser(user.id);
+                      }}
+                    >
                       <TrashIcon className="size-6 text-gray-500" />
-                    </a>
+                    </button>
                     <a x-data="{ tooltip: 'Edite' }" href="#">
                       <PencilSquareIcon className="size-6 text-gray-500" />
                     </a>

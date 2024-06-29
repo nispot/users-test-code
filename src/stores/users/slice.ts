@@ -5,7 +5,7 @@ import {
   PayloadAction,
 } from '@reduxjs/toolkit';
 
-import { getUser, getUsers } from '../../services/usersServices';
+import { deleteUser, getUser, getUsers } from '../../services/usersServices';
 import { UserWithId } from '../../types/types';
 
 interface UsersState {
@@ -52,6 +52,19 @@ export const fetchUser: AsyncThunk<UserWithId, string, object> =
     },
   );
 
+export const removeUser: AsyncThunk<UserWithId, string, object> =
+  createAsyncThunk<UserWithId, string>(
+    'users/deleteUser',
+    async (id, { rejectWithValue }) => {
+      try {
+        const response = await deleteUser(id);
+        return response;
+      } catch (error) {
+        return rejectWithValue(error);
+      }
+    },
+  );
+
 const usersSlice = createSlice({
   name: 'users',
   initialState,
@@ -61,6 +74,10 @@ const usersSlice = createSlice({
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
+    },
+    setError: (state, action: PayloadAction<string | null>) => {
+      state.error = action.payload;
+      state.status = 'idle';
     },
   },
   extraReducers: (builder) => {
@@ -77,6 +94,17 @@ const usersSlice = createSlice({
         fetchUser.fulfilled,
         (state, action: PayloadAction<UserWithId>) => {
           state.currentUser = action.payload;
+          state.status = 'succeeded';
+        },
+      )
+      .addCase(
+        removeUser.fulfilled,
+        (state, action: PayloadAction<UserWithId>) => {
+          console.log(action);
+          state.users = state.users.filter(
+            (user) => user.id !== action.payload.id,
+          );
+          state.loading = false;
           state.status = 'succeeded';
         },
       )
@@ -98,6 +126,6 @@ const usersSlice = createSlice({
   },
 });
 
-export const { setLoading, setPage } = usersSlice.actions;
+export const { setLoading, setPage, setError } = usersSlice.actions;
 
 export default usersSlice.reducer;
