@@ -1,5 +1,6 @@
 import App from './App';
 import { Users } from './pages/users/Users';
+import { ViewUser } from './pages/users/ViewUser';
 
 export default [
   {
@@ -9,5 +10,9 @@ export default [
   {
     path: '/users',
     element: <Users />,
+  },
+  {
+    path: '/view-user/:id',
+    element: <ViewUser />,
   },
 ];

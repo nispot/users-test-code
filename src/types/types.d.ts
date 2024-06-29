@@ -7,9 +7,9 @@ export interface User {
   email: string;
   address: Address;
   phone: string;
-  website: string;
+  website?: string;
   occupation: string;
-  hobbies: string[];
+  hobbies?: string[];
 }
 
 export interface UserWithId extends User {

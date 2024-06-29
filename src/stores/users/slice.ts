@@ -94,6 +94,7 @@ const usersSlice = createSlice({
         fetchUser.fulfilled,
         (state, action: PayloadAction<UserWithId>) => {
           state.currentUser = action.payload;
+          state.loading = false;
           state.status = 'succeeded';
         },
       )

@@ -55,7 +55,11 @@ export const UsersTable = () => {
             {users.map((user) => (
               <tr key={user.id} className="hover:bg-gray-50">
                 <td className="flex gap-3 px-6 py-4 font-normal text-gray-900">
-                  <UserAvatarCard name={user.name} email={user.email} />
+                  <UserAvatarCard
+                    id={user.id}
+                    name={user.name}
+                    email={user.email}
+                  />
                 </td>
                 <td>{user.phone}</td>
                 <td>{user.website}</td>

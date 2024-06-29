@@ -4,5 +4,10 @@
   "user_name": "Nombre de Usuario",
   "phone": "Teléfono",
   "website": "Sitio Web",
-  "occupation": "Ocupación"
+  "occupation": "Ocupación",
+  "address": "Dirección",
+  "hobbies": "Pasatiempos",
+  "email": "Correo Electrónico",
+  "age": "Edad",
+  "edit_user": "Editar Usuario"
 }

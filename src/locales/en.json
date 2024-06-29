@@ -4,5 +4,10 @@
   "user_name": "User Name",
   "phone": "Phone",
   "website": "Website",
-  "occupation": "Occupation"
+  "occupation": "Occupation",
+  "address": "Address",
+  "hobbies": "Hobbies",
+  "email": "Email",
+  "age": "Age",
+  "edit_user": "Edit User"
 }
