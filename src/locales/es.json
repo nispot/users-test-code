@@ -25,5 +25,7 @@
   "is_required": "es requerido",
   "positive_error": "debe ser positivo",
   "invalid_email": "Correo electrónico inválido",
-  "invalid_url": "URL inválida"
+  "invalid_url": "URL inválida",
+  "news": "Noticias",
+  "read_more": "Leer más"
 }

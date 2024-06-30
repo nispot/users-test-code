@@ -5,6 +5,7 @@ import {
   PayloadAction,
 } from '@reduxjs/toolkit';
 
+import { User, UserWithId } from '../../pages/users/types/types';
 import {
   createUser,
   deleteUser,
@@ -12,7 +13,6 @@ import {
   getUsers,
   updateUser,
 } from '../../services/usersServices';
-import { User, UserWithId } from '../../types/types';
 
 interface UsersState {
   users: UserWithId[];
@@ -177,3 +177,4 @@ export const { setLoading, setPage, setError, setSaveStatus } =
   usersSlice.actions;
 
 export default usersSlice.reducer;
+export type { UsersState };

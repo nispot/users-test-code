@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../../hooks/store';
 import { addUser } from '../../stores/users/slice';
-import { User } from '../../types/types';
 import { UserForm } from './components/UserForm';
+import { User } from './types/types';
 
 export const AddUser = () => {
   const initialUserValues: User = {

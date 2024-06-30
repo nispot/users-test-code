@@ -6,7 +6,7 @@ import { Toaster, toast } from 'sonner';
 import * as Yup from 'yup';
 import { useAppDispatch, useAppSelector } from '../../../hooks/store';
 import { setError, setSaveStatus } from '../../../stores/users/slice';
-import { User, UserWithId } from '../../../types/types';
+import { User, UserWithId } from '../types/types';
 import { LoadingSvg } from './LoadingSvg';
 import { UserAvatar } from './UserAvatar';
 

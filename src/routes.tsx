@@ -4,6 +4,8 @@ import { Users } from './pages/users/Users';
 import { ViewUser } from './pages/users/ViewUser';
 
 import Layout from './components/Layout';
+import { NewsList } from './pages/news/NewsList';
+import { ViewNews } from './pages/news/ViewNews';
 
 export const routes = [
   {
@@ -29,6 +31,14 @@ export const routes = [
       {
         path: 'add-user',
         element: <AddUser />,
+      },
+      {
+        path: 'news',
+        element: <NewsList />,
+      },
+      {
+        path: 'news/:id',
+        element: <ViewNews />,
       },
     ],
   },

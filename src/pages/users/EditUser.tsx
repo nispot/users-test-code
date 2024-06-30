@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/store';
 import { editUser, fetchUser } from '../../stores/users/slice';
-import { UserWithId } from '../../types/types';
 import { UserForm } from './components/UserForm';
+import { UserWithId } from './types/types';
 
 export const EditUser = () => {
   const { id } = useParams();

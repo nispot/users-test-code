@@ -1,4 +1,4 @@
-import { User, UserWithId } from '../types/types';
+import { User, UserWithId } from '../pages/users/types/types';
 
 const BASE_URL = 'https://cad1d9bcfdfe7ee653f3.proxy.beeceptor.com/api/users/';
 
