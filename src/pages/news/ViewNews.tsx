@@ -46,7 +46,6 @@ export const ViewNews = () => {
                 Source: {currentNews?.source}
               </figcaption>
             </figure>
-
             <div className="lg:w-2/3">
               <header className="mb-4">
                 <h2 className="text-2xl font-bold">{currentNews?.title}</h2>

@@ -1,30 +1,116 @@
-# React + TypeScript + Vite
+# My Driscoll's Coding Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to My React App! This application is built with React and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Instructions](#instructions)
+- [Project Notes](#project-notes)
+- [Libraries Used](#libraries-used)
+- [Instructions of Coding Test](#coding-test)
 
-## Expanding the ESLint configuration
+## Instructions
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the repository**:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+git clone https://github.com/nispot/users-test-code.git
+cd mi-repo
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. **Install dependencies:**:
+   npm install
+
+3. **Run the project**
+
+- Development: npm run dev
+- Production Build: npm run build
+- Linter: npm run lint
+- Formatter: npm run format
+
+# 1. Project Notes
+
+I created this project with the goal of making the coding test as close as possible to a real-world, scalable application. User photos are randomly fetched from https://randomuser.me/photos. To speed up development, the backend for the user CRUD API was created using https://app.beeceptor.com/.
+
+# Libraries Used
+
+## React + TypeScript + Vite
+
+https://vitejs.dev/guide
+
+## Navigation - SPA
+
+- React Router
+  https://reactrouter.com/
+
+## State Management
+
+- Redux Toolkit
+  https://redux-toolkit.js.org/
+
+## Translations
+
+- i18next
+  https://www.i18next.com/
+
+## CSS
+
+- Tailwind
+  https://tailwindcss.com/
+
+## Forms
+
+- formik (control de formularios)
+- https://formik.org/docs/guides/validation
+
+- Yup (validaciones sugeridas por formik)
+  https://github.com/jquense/yup
+
+## Notifications (Toasts)
+
+- Sonner
+  https://sonner.emilkowal.ski/
+
+## Icons
+
+-Hero Icons
+https://heroicons.com/
+
+## Animated Skeletons for Users Management
+
+- react-content-loader
+  https://github.com/danilowoz/create-content-loader
+
+### Linter and Formatter
+
+- Eslint & Prettier (airBnb)
+
+## Coding Test
+
+Here is the information for the coding test:
+
+Create a SPA in react and Typescript where I can have the following modules
+
+Users Module
+
+1. View of the users in the app
+
+2. View/Edit single user
+
+3. If pasted a specific URL we land in the specific view of the user uniquely identified
+
+4. Delete a user
+
+5. Create a new user
+
+News Module
+
+1. List of news
+
+2. View of single news
+
+- Include also multi language ( all the text related to actions in the app should be translated in two languages: en, es)
+
+- Once the code is completed please provide the instructions to run the project
+
+- Provide an npm repo that we can download from

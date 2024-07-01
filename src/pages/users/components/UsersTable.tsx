@@ -48,7 +48,7 @@ export const UsersTable = () => {
       ) : error === 'Failed to fetch users' ? (
         <div className="text-center text-red-500">{error}</div>
       ) : (
-        <table className="w-full border-collapse bg-white text-left text-sm text-gray-200 dark:text-white dark:bg-gray-800  ">
+        <table className="w-full border-collapse bg-white text-left text-sm text-gray-700 dark:text-gray-200 dark:text-white dark:bg-gray-800  ">
           <thead className="bg-gray-50 dark:bg-gray-800">
             <tr>
               <th className="px-6 py-4 font-medium text-gray-900 dark:text-white">
